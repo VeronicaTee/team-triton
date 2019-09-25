@@ -12,14 +12,6 @@ body{
     margin-top: 71px;
     width: 60%;
     box-shadow: 4px #ddd;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    padding: 40px;
-    width: 500px;
-    height: 1000px; 
-
 }
 h3{
     margin-left: 99px;
