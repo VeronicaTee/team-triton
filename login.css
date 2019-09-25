@@ -88,3 +88,49 @@ button.get-started{
 .btn-link.forget-password-btn:hover {
     color: #298050;
 }
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  
+  /* #root{
+    position: relative;
+    height:100vh;
+  }
+   */
+  
+.form-control.ctrl:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: none;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(49, 187, 108, 0.77);
+}
+
+
+.form-control.md{
+  height: calc(1.5em + .75rem + 8px);
+}
+
+
+.btn-outline-primary.inverted-white {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-outline-primary.inverted-white {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-outline-primary.inverted-white:hover{
+  color: #fff;
+  background-color: #1dc367;
+  border-color: none;
+}
