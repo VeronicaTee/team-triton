@@ -1,0 +1,41 @@
+div.table {
+  width: 90%;
+  margin: 0 auto;
+  display: none;
+  margin-top: 3rem;
+  flex-direction: column;
+}
+
+.search_box {
+  padding: 0.23rem;
+  width: 300px;
+  border-radius: 3px;
+  border: 2px solid #394a6d;
+  align-self: flex-end;
+  margin-right: 20rem;
+}
+
+.search_box::placeholder {
+  color: #394a6d;
+}
+
+table.user_data {
+  font-size: 1.1rem;
+  font-family: Poppins, Medium, sans-serif;
+}
+
+thead tr th {
+  color: #394a6d;
+  text-align: left;
+  font-weight: 500;
+}
+
+tbody tr {
+  color: #111111;
+  border: 1px solid #000000;
+}
+
+table.user_data th,
+table.user_data td {
+  padding: 12px 14px;
+}
