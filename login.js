@@ -1,56 +1,85 @@
-// listing all text elements
-var email = document.getElementById("email");
-var password = document.getElementById("password");
-var btn = document.querySelector("button");
-btn.addEventListener("click", validate);
+import React, { useState } from 'react';
+import bg from '../images/login-bg.jpg';
+import '../styles/Login.css';
+import { Button, FormGroup, Label, Input } from 'reactstrap';
+import { Password } from '../components';
 
-// listing all error display elements
-var email_error = document.getElementById("email_error");
-var password_error = document.getElementById("password_error");
 
-// listing all event listeners
-email.addEventListener("keyup", emailVerify, true);
-password.addEventListener("keyup", passwordVerify, true);
+function Login() {
 
-// validate function
-// function Validate() {
+    const [values, set] = useState({
+        showPassword:false,
+        email:"",
+        password:""
+    })
 
-//     if (email.value == "") {
-//         email.style.border = "1px solid red";
-//         document.getElementById('email').style.color = "red";
-//         email_error.textContent = "Email is required";
-//         email.focus();
-//         return false;
-//     }
+    const handleInput = ({ target })=>{
+        const { name, value } = target;
+        set(values => ({ ...values, [name]:value }))
+    }
 
-//     if (password.value == "") {
-//         password.style.border = "1px solid red";
-//         document.getElementById('password').style.color = "red";
-//         password_error.textContent = "Password is required";
-//         password.focus();
-//         return false;
-//     }
-// }
+    const handleSubmit = ()=>{
+        console.log(values)
+    }
 
-// event handler functions
-
-function emailVerify(e) {
-  if (email.value != "") {
-    email.style.border = "1px solid #5e6e66";
-    document.getElementById("email").style.color = "#5e6e66";
-    email_error.innerHTML = "";
-    return true;
-  }
+    return (
+        <div className="page-container">
+            <div className="page-group form-area">
+                <form>
+                    <h5>Welcome back to TritonFinApp!</h5>
+                    <FormGroup>
+                        <Label for="exampleEmail">Email</Label>
+                        <Input 
+                            className="ctrl md" 
+                            type="email" 
+                            name="email" 
+                            id="exampleEmail"
+                            onKeyUp = { handleInput }
+                            autoComplete = "email"
+                        />
+                    </FormGroup>
+                    <Password
+                        className="ctrl md" 
+                        name="password" 
+                        id="user-password"
+                        onKeyUp = { handleInput }
+                        autoComplete = "current-password"
+                    />
+                    <div className="forget-pass">
+                        <Button 
+                            className="forget-password-btn" 
+                            color="link"
+                        >
+                            Forgot Password ?
+                        </Button>
+                    </div>
+                    <Button 
+                        color="success" 
+                        size="lg" 
+                        block
+                        onClick = { handleSubmit }
+                    > 
+                        Sign In 
+                    </Button>
+                    <div className="text-center mt-3">
+                        <p>Don't have an account? <a href="/" className="text-signup">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+            <div className="page-group form-image">
+                <div className="background-holder" style={{backgroundImage: `url(${bg})` }}> </div>
+                <div className="overlay"></div>
+                <div className="desc-text">
+                    <h4> TristonFinApp gives best services to our customers. </h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                    <Button className="inverted-white get-started" outline color="primary" >Get Started</Button>
+                </div>
+            </div>
+        </div>
+    )
 }
-function passwordVerify() {
-  if (password.value != "") {
-    password.style.border = "1px solid #5e6e66";
-    document.getElementById("password").style.color = "#5e6e66";
-    password_error.innerHTML = "";
-    return true;
-  }
-}
-
-function validate(e) {
-  e.preventDefault();
-}
+export default login
